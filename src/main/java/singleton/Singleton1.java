@@ -1,11 +1,12 @@
 package singleton;
 
 /**
- * 单例模式-饱汉模式
+ * 单例模式-饱汉模式(懒汉模式)
  * 需要时才创建对象,加上同步避免线程安全问题
  */
 public class Singleton1 {
 
+    //加上volatile避免指令重排序造成单例失败
     private static volatile Singleton1 singleton1;
 
     private Singleton1(){
